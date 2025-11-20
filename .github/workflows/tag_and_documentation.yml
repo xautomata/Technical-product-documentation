@@ -1,0 +1,69 @@
+# quessta azione si attiva ad ogni nuovo push su master o main
+# azione che verifica la versione da file e se questa versione e' piu aggiornata rispetto al tag su github, aggiorna il tag
+# una volta creato il tag viene creata la documentazione
+name: Create Tag on Version Change and build documentation
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  create_tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Read version from file
+        id: get_version
+        # ricordarsi di modificare il percorso del file
+        run: echo "VERSION=$(cat version.txt | grep -oP "(?<=version = ')[^']*")" >> $GITHUB_OUTPUT
+
+      - name: Get current tag
+        id: get_current_tag
+        run: echo "TAG=$(git describe --abbrev=0)" >> $GITHUB_OUTPUT
+
+      - name: Check if version has changed
+        id: version_changed
+        run: |
+          PREVIOUS_TAG=${{ steps.get_current_tag.outputs.TAG }}
+          CURRENT_VERSION=${{ steps.get_version.outputs.VERSION }}
+          if [ "$PREVIOUS_TAG" != "$CURRENT_VERSION" ]; then
+            echo "Version has changed. New version is $CURRENT_VERSION"
+            echo "VERSION_CHANGED=true" >> $GITHUB_OUTPUT
+          else
+            echo "Version has not changed."
+            echo "VERSION_CHANGED=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create new tag
+        if: ${{ steps.version_changed.outputs.VERSION_CHANGED == 'true' }}
+        run: |
+          TAG_NAME=${{ steps.get_version.outputs.VERSION }}
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+
+
+# questa azione si attiva solo se quella subito prima ha creato un nuovo tag con successo
+# viene generata la documentazione sul ramo apposta
+  documentation:
+    runs-on: ubuntu-latest
+    needs: create_tag
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v3
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - run: pip install mkdocs-material
+      - run: pip install "mkdocstrings[python]"
+      - run: pip install pillow cairosvg
+      - run: mkdocs gh-deploy --force
