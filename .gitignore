@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 
 .idea
-*.pptx
 
 # C extensions
 *.so
@@ -14,7 +13,6 @@ __pycache__/
 build/
 develop-eggs/
 dist/
-downloads/
 eggs/
 .eggs/
 lib/

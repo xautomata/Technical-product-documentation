@@ -60,8 +60,11 @@ nav:
   - Product Vision: vision.md
   - Strategic Themes and Pillars: themes.md
   - Roadmap: road.md
+  - Automation Pilot Program: app.md
   - High Level Documentation: hdl.md
   - Low Level Documentation: lld.md
+  - Success Cases: use_case.md
+  - Ecosystem: ecosystem.md
 
 copyright:
   All rights reserved
