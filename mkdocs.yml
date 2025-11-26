@@ -38,6 +38,11 @@ repo_name: XAUTOMATA Technical Product Documentation
 plugins:
   - mkdocstrings
   - search
+  - mkdocs-video
+
+extra_css:
+  - css/neoteroi-mkdocs.css
+  - css/neoteroi-timeline.css
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -54,6 +59,7 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.blocks.caption
+  - neoteroi.timeline
 
 nav:
   - index.md

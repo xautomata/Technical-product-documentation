@@ -108,6 +108,30 @@ environment via Docker or in a Kubernetes cluster.
 Fig.2 - Data Acquisition Architecture
 ///
 
+## Automation Engine
+
+The automation engine of XAUTOMATA is the beating heart of the platform, 
+designed to intelligently and autonomously manage complex business processes 
+that exceed the capabilities of traditional RPA and BPM solutions. At its core 
+operates an architecture based on **a behavioral agent model**, where each entity 
+or stage of a process is interpreted as a dynamic state. The approach is distinctly
+**declarative**: users define operational rules and business logic through the 
+proprietary XAL language, and the system autonomously orchestrates execution, 
+making dynamic decisions and automatically managing resource allocation in 
+real-time in response to specific events. 
+
+Each process is broken down into "automata," intelligent and independent 
+agents capable of communicating with one another, generating new automata, 
+and making decisions based on local and shared data. This modular and highly 
+scalable model, supported by a cloud-native infrastructure on Kubernetes, enables 
+the coordination of a high number of actions, the integration of third-party systems,
+and the management of temporal dependencies with unparalleled responsiveness. Essentially,
+XAUTOMATA directly automates the rules that govern operations, not just linear flows, making 
+the solution extremely flexible, adaptable to changes, and capable of creating a living 
+digital representation (Digital Twin) of the processes.
+
+![type:video](https://www.youtube-nocookie.com/embed/--Gq13xlSMk)
+
 ## Dashboards
 
 XAUTOMATA allows, through data published in a dashboard. The Dashboards are customizable by

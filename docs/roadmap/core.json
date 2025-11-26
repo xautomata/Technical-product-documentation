@@ -1,0 +1,47 @@
+[
+    {
+        "title": "UI Designer v2",
+        "content": "Refactoring the low-code interface for a simpler and more intuitive process digitization experience.",
+        "sub_title": "2026-Q1"
+    },
+    {
+        "title": "UI for Test Generation",
+        "content": "Development of a user interface that allows for on-the-fly test generation across any environment.",
+        "sub_title": "2026-Q2"
+    },
+    {
+        "title": "Integration with Flink Technology for Streaming Operations on Kafka Queues",
+        "content": "In order to convert analytical operations from batch processes to real-time streaming operations, we are implementing Flink technology, which enables complex operations on streaming data from Kafka queues.",
+        "sub_title": "2026-Q3"
+    },
+    {
+        "title": "Codebase Update",
+        "content": "Updating the automation codebase to keep pace with technological advancements.",
+        "sub_title": "2026-Q4"
+    },
+    {
+        "title": "UI Runtime Automation v2",
+        "content": "Refactoring the operational management interface for running digitalized processes.",
+        "sub_title": "2026-Q4"
+    },
+    {
+        "title": "Wizard and Automation Startup",
+        "content": "Development of a user interface that enables the deployment and startup of automations.",
+        "sub_title": "2027-Q1"
+    },
+    {
+        "title": "Modular Automations",
+        "content": "Development of pre-configured automations with specific tasks that can be used in a modular way to construct processes, thereby reducing implementation time.",
+        "sub_title": "2027-Q2"
+    },
+    {
+        "title": "Adding Event-Driven Architecture",
+        "content": "Introduction of an event-driven architecture for automation operation to complement the current polling architecture.",
+        "sub_title": "2027-Q4"
+    },
+    {
+        "title": "Load JARs at Runtime",
+        "content": "Introducing the functionality to update automation code at runtime, allowing patches or upgrades to be applied without interrupting process execution.",
+        "sub_title": "2027-Q4"
+    }
+]
