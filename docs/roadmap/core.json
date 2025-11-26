@@ -22,7 +22,6 @@
     {
         "title": "UI Runtime Automation v2",
         "content": "Refactoring the operational management interface for running digitalized processes.",
-        "sub_title": "2026-Q4"
     },
     {
         "title": "Wizard and Automation Startup",
@@ -42,6 +41,5 @@
     {
         "title": "Load JARs at Runtime",
         "content": "Introducing the functionality to update automation code at runtime, allowing patches or upgrades to be applied without interrupting process execution.",
-        "sub_title": "2027-Q4"
     }
 ]
