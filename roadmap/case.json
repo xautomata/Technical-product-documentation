@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Digital Twin Energy Efficiency in Smart Buildings",
+        "content": "Module for modeling consumption, efficiency improvements, and energy forecasting.",
+        "sub_title": "2025-Q4"
+    },
+    {
+        "title": "Digital Twin Predictive Maintenance in Manufacturing Plants",
+        "content": "Module for synchronization with SCADA/MES systems and real-time scenario simulations for Predictive Maintenance and quality assurance in production.",
+        "sub_title": "2026-Q2"
+    },
+    {
+        "title": "Digital Twin for Cybersecurity Operational Processes",
+        "content": "Module for making cybersecurity technologies interoperable to enhance the efficiency of Security Operations Centers (SOC).",
+        "sub_title": "2026-Q4"
+    }
+]
