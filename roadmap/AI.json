@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Expand the anomaly detection packages with more effective algorithms",
+        "content": "Implementation of new anomaly detection algorithms, in addition to the existing models.",
+        "sub_title": "2026-Q1"
+    },
+    {
+        "title": "Integration with agenticAI systems",
+        "content": "Integrating agenticAI systems into the digitalization process pipeline, both from the process design perspective and the maintenance of data analysis algorithms.",
+        "sub_title": "2026-Q3"
+    },
+    {
+        "title": "Increase the speed and scalability of root cause algorithms",
+        "content": "Using Flink technology to scale root cause algorithms for faster and more dynamic use.",
+        "sub_title": "2026-Q4"
+    }
+]

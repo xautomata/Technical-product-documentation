@@ -1,0 +1,967 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation of XAUTOMATA Product">
+      
+      
+      
+        <link rel="canonical" href="https://www.xautomata.com/lld/">
+      
+      
+        <link rel="prev" href="../hdl/">
+      
+      
+        <link rel="next" href="../use_case/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Low Level Documentation - XAUTOMATA Technical Product Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../css/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../css/neoteroi-timeline.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#low-level-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="XAUTOMATA Technical Product Documentation" class="md-header__button md-logo" aria-label="XAUTOMATA Technical Product Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XAUTOMATA Technical Product Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Low Level Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="XAUTOMATA Technical Product Documentation" class="md-nav__button md-logo" aria-label="XAUTOMATA Technical Product Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XAUTOMATA Technical Product Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategic Themes and Pillars
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../road/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Pilot Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hdl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High Level Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Low Level Documentation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Low Level Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intermediate-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate level architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-architecture-software-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container architecture, software components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-database-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The database structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The database structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use_case/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Success Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intermediate-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate level architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-architecture-software-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container architecture, software components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-database-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The database structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The database structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="low-level-documentation">Low Level Documentation</h1>
+<p>The Xautomata platform is designed to allow the ingestion, management and distributed processing of
+data on large data sets and large clusters by leveraging distributed software and cluster architectures 
+of Apache Kafka, Apache Spark, FastAPI, Postgres, on top of the Kubernetes platform.</p>
+<p><strong>The document describes the low level architecture, to give context to the low level insights the high 
+level architecture summary is reported.</strong></p>
+<h2 id="intermediate-level-architecture">Intermediate level architecture</h2>
+<p>The system described by the high level architecture has been developed using standard components,
+present in most modern system architectures, to allow interaction between the client environment 
+(data collection via probes), the user interface and the automation engine (XAL).</p>
+<p>The REST API endpoints are the only entry and exit point from the platform and use modern standards 
+for security and management (OAUTH2 authentication, OpenAPI definition). Metric data is stored in a 
+time series database (a time-partitioned database), while asset data is stored in a traditional 
+relational database.</p>
+<p>Changes to relevant parts of the relational database feed the Asset queue and are implemented through
+CDC (Change Data Capture) which will provide data to the Asset queue. This allows the XAL automation 
+engine to be aware of changes to Assets (e.g. an asset may be placed in maintenance mode and thus temporarily
+excluded from automation) without the need for continuous polling from the database, which otherwise
+could represent a potential bottleneck for the architecture.</p>
+<p>Metric data is organized, collected and sent directly to the metric queues, provided specific constraints
+are met.</p>
+<p>Automation data is produced by the automaton and sent to the automation queue, where relevant information 
+about changes to the automaton state is stored.</p>
+<p>All data is stored in the time series database following specific retention rules.</p>
+<p>Machine learning algorithms operate on top of the time series database to perform data analysis, 
+anomaly detection and forecasting relevant to the platform.</p>
+<figure>
+<p><img alt="Platform" src="../images/platform.png"></p>
+<figcaption>
+<p>Fig.1 - Platform data flow diagram</p>
+</figcaption>
+</figure>
+<h2 id="container-architecture-software-components">Container architecture, software components</h2>
+<p>The platform has been implemented based on containers and orchestrated by Kubernetes
+(https://kubernetes.io/), designed to be easily customizable and deployed in both a
+multi-tenant and single-tenant environment.</p>
+<p>Kubernetes allows deploying the platform on multiple public and private cloud providers and on-premise as well, the tested distribution are:</p>
+<ul>
+<li>Azure</li>
+<li>AWS</li>
+<li>OpenShift</li>
+<li>RKE</li>
+<li>Tanzu</li>
+</ul>
+<p>The current supported Kubernetes versions are: from <code>1.27</code> to <code>1.31</code>.</p>
+<p>We use Helm charts (https://helm.sh/) to provide deployment customizations and provide customizations
+of the main parameters of the platform.</p>
+<p>Internally we use the following components:</p>
+<ul>
+<li>Apache Spark for distributed execution of the automation engine (XAL)</li>
+<li>FastAPI (https://fastapi.tiangolo.com/) as a fast, performant and self-documenting API REST platform, Postgres for the relational database on assets and time series</li>
+<li>Apache Kafka (https://kafka.apache.org/) as a queue system.</li>
+<li>Postgres database for both relational and time series data. We use row level security to allow multiple tenants in the same distribution of the architecture.</li>
+<li>Docker Registry for probe distribution.</li>
+</ul>
+<p>A distribution archive of the current Xautomata is provided with the current documentation.</p>
+<p>The documentation of each component is included in the respective source code repositories.</p>
+<h2 id="the-database-structure">The database structure</h2>
+<p>The structure of XAutomata is complex and mixes together elements of a tree hierarchy with elements from a graph, but if you limit yourself to interacting with a client's asset elements the complexity is reduced a bit.
+We can imagine having a client's asset and a series of services that point to the asset, going to enrich the information present there, or adding functionality.</p>
+<h3 id="the-asset">The asset</h3>
+<p>As an asset we define everything that constitutes the physical perimeter of the customer. 
+The asset is defined hierarchically by the following components (in descending hierarchical order):</p>
+<ul>
+<li>Customer</li>
+<li>Site</li>
+<li>Group</li>
+<li>Object</li>
+<li>Metric_type</li>
+<li>Metric</li>
+<li>Service</li>
+</ul>
+<p>Each of these levels contains information, the customer defines the customer, 
+the sites define the customer's branches, etc. Each level is connected with a
+one-to-many link with the lower level; therefore, a site has groups within it, 
+but a group cannot be in multiple sites. 
+There is one exception which are the groups, for most of their use they maintain a 
+one-to-many relationship with the metric_types, but an object can be contained in multiple groups.
+So let's say that between groups and objects there is a many-to-many relationship. </p>
+<p>Each element can be identified by a series of primary keys that also include the UUID of its upper level.
+This is obviously not true for objects because of the many-to-many nature with groups.</p>
+<p>The services, which close the queue, are a second exception: they have a hierarchical importance 
+similar to the metrics, they can be linked to the metrics with a many-to-many link but they can
+also not be linked to the metrics and live completely detached from the asset. 
+The services represent additional information calculated from customer values or other data, 
+they are not necessarily linked to the asset. If they are linked to the asset it is through
+the metrics, in these cases there is a pointer to all the metrics that contributed to forming the service.</p>
+<p>The structure from the customer to the service represents the asset and is called the tree.</p>
+<p>To navigate the tree there are APIs that allow you to obtain the link information of one layer with 
+the others. To make an example, if I know a metric and I want to know in which object it is contained, 
+in the data of the metric itself there is the uuid of the metric_type that contains it. With that uuid, 
+I can get the details of the metric_type in which the uuid of the object that contains it is present. 
+With that uuid I can go and ask for the details of the object I was interested in knowing.</p>
+<p>It is equally true in the other direction, I know an object I can know all the metric_types 
+that compose it, chosen one I can ask for all the metrics that compose it.</p>
+<p>This way of navigating the tree finds some variations when trying to overcome the layers 
+with many-to-many relationships. To know which groups an object is contained in and vice versa,
+there are special APIs that given one of the two layers, return you the second. This also applies 
+to services having the same many-to-many nature.</p>
+<p>There are shortcuts to navigate the tree, these "shortcuts" come in the form of the tree_hierarchy API set.
+This API is designed to retrieve an element in the tree with all its links with the upper layers.</p>
+<h3 id="time-series">Time series</h3>
+<p>The asset represents the objects that produce data, but the data itself is collected in a different place.
+Specifically in the time series tables. These series are divided into two types, state series and value 
+series.</p>
+<p>Status series are a succession of information collected in dictionaries, they can contain any type of 
+information and carry a gravity index with them. The value series are successions of numbers, 
+ideal for collecting numeric data such as temperature, speed etc.</p>
+<p>The metrics are the layer where these series are saved. Each metric is directly linked to
+one and only one time series, be it state or value.</p>
+<p>The services can be linked to time series in turn, and, unlike the metrics, can point to 
+both value and state series at the same time.</p>
+<h3 id="additional-information">Additional information</h3>
+<p>The relationships do not end with the asset, there are a myriad of additional explorable information,
+such as users, dashboards and so on. 
+However, the way to navigate these links is the same as navigating the tree.</p>
+<p>The complete connection between all the elements that can be called up with APIs 
+is presented in the diagram below.</p>
+<p><img alt="Realtions" src="../images/relations.png"></p>
+<h3 id="apis">APIs</h3>
+<p>The complete library of endpoints that can be used to interact with XAutomata can be found at the 
+following addresses:</p>
+<ul>
+<li>https://portal.xautomata.com/api/v0/docs#/</li>
+<li>https://portal.xautomata.com/api/v0/redoc</li>
+</ul>
+<p>It is also possible to use a Python library called Hive (indexed on Pypi),
+to facilitate the use of the following endpoints if you are writing a Python integration
+(documentation on https://sherlogic.github.io/xautomata-hive/)</p>
+<h3 id="log-management">Log management</h3>
+<p>The microservices architecture is completely Kubernetes oriented and information can be 
+accessed via kubctl accesses.  </p>
+<p>To access the display of application logs, it is necessary to identify the active 
+pod that is running or that has run the operation and use the command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ kubectl logs [pod name] 
+</code></pre></div>
+<p>In addition, access logs to the APIs are logged in a kafka queue to be "consumed" by an operator 
+who needs it. A 7-day retention is currently set which can be customized.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All rights reserved
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.tooltips", "navigation.sections", "navigation.top", "content.code.annotate", "content.code.copy", "content.code.select", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
