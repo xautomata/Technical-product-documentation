@@ -8,7 +8,7 @@ Apache Kafka, Apache Spark, FastAPI, Postgres clusters, on top of the Kubernetes
 
 ## Overview
 
-Xautomata is a product that brings together four main modules as shown in the following image.
+Xautomata is a product that brings together four main modules as shown in the following image. 
 
 ![Pillars](images/pillars.png)
 
